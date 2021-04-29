@@ -53,7 +53,7 @@ y_test = pd.read_csv("path_to_test/y_test.zip")
 y_pred = model.predict(X_test)
 
 # Prediction to pandas dataframe
-y_pred = pd.DataFrame(pred,columns=true.columns) for pred, true in zip(pred_train, y_test)
+y_pred = pd.DataFrame(pred, columns=y_test.columns)
 ```
 
 ## Data
