@@ -34,6 +34,15 @@ The script will save:
 - the `sklearn.model_selection.GridSearchCV` output in `CVcomplete_results.pkl`.
 - the `tensorflow` best model in `CVcomplete_best_estimator.h5`.
 
+To load the model perform the following steps (remember to change `path_to_model`):
+
+```
+import tensorflow as tf
+from model import r2_metric
+
+model = tf.keras.models.load_model("path_to_model/CVcomplete_best_estimator.h5", custom_objects={"r2_metric": r2_metric})
+
+```
 ## Data
 
 To explore the data in the `data` folder, use the `pandas` library as follows:
