@@ -19,7 +19,7 @@ numpy==1.19.5
 
 ## Usage
 
-To execute the default script execute:
+To execute the script:
 
 ```
 python grid_search.py
