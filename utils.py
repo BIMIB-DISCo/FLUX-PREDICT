@@ -11,12 +11,7 @@ def load_pickle(path):
         b = pickle.load(handle)
     return b
 
-def get_experiment_path(data_path, experiment_name):
-
-    if not os.path.exists(data_path):
-        os.mkdir(data_path)
-
-    path = os.path.join(data_path, experiment_name)
+def get_experiment_path(path):
 
     version = 0
     if os.path.isdir(path):

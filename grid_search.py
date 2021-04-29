@@ -16,25 +16,11 @@ warnings.filterwarnings('ignore')
 from model import create_model
 from utils import get_experiment_path,  write_pickle
 
+exp_path = get_experiment_path("results")
 
-############
-# ARGPARSE #
-############
+X = pd.read_csv(f"data/X_full.zip")
 
-parser = argparse.ArgumentParser(description='Experiment parameters.')
-parser.add_argument('--exp_fname',
-                    type=str,
-                    dest="exp_fname",
-                    help='experiment configuration',
-                    default="full")
-
-args = parser.parse_args()
-
-exp_path = get_experiment_path("results", args.exp_fname)
-
-X = pd.read_csv(f"data/X_{args.exp_fname}.csv")
-
-y = pd.read_csv(f"data/y_{args.exp_fname}.csv")
+y = pd.read_csv(f"data/y_full.zip")
 
 
 #################
@@ -46,10 +32,10 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.1, random_state=42)
 
 # Save train and test set
-X_train.to_csv(f"{exp_path}/X_train_{args.exp_fname}.csv")
-y_train.to_csv(f"{exp_path}/y_train_{args.exp_fname}.csv")
-X_test.to_csv(f"{exp_path}/X_test_{args.exp_fname}.csv")
-y_test.to_csv(f"{exp_path}/y_test_{args.exp_fname}.csv")
+X_train.to_csv(f"{exp_path}/X_train.zip")
+y_train.to_csv(f"{exp_path}/y_train.zip")
+X_test.to_csv(f"{exp_path}/X_test.zip")
+y_test.to_csv(f"{exp_path}/y_test.zip")
 
 # Scale data
 scaler = StandardScaler()
@@ -115,7 +101,7 @@ grid.fit(X_train, y_train.values, callbacks=[earlyStop], validation_split=.1)
 
 grid_dict = {k: v for k, v in grid.__dict__.items() if 'estimator' not in k}
 
-write_pickle(grid_dict, f"{exp_path}/CVcomplete_results_{args.exp_fname}.pkl")
+write_pickle(grid_dict, f"{exp_path}/CVcomplete_results.pkl")
 
 est = grid.best_estimator_
-est.model.save(f"{exp_path}/CVcomplete_best_estimator_{args.exp_fname}.h5")
+est.model.save(f"{exp_path}/CVcomplete_best_estimator.h5")
