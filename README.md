@@ -40,12 +40,20 @@ To load the model and make predictions on the test set, perform the following st
 import tensorflow as tf
 from model import r2_metric
 
+# Load model
 model = tf.keras.models.load_model(
   "path_to_model/CVcomplete_best_estimator.h5", 
   custom_objects={"r2_metric": r2_metric})
 
+# Load data
 X_test = pd.read_csv("path_to_test/X_test.zip")
+y_test = pd.read_csv("path_to_test/y_test.zip")
+
+# Predict
 y_pred = model.predict(X_test)
+
+# Prediction to pandas dataframe
+y_pred = pd.DataFrame(pred,columns=true.columns) for pred, true in zip(pred_train, y_test)
 ```
 
 ## Data
