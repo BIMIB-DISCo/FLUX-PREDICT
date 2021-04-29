@@ -38,6 +38,7 @@ To load the model and make predictions on the test set, perform the following st
 
 ```python
 import tensorflow as tf
+import pandas as pd
 from model import r2_metric
 
 # Load model
