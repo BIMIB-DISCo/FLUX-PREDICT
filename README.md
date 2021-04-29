@@ -27,7 +27,12 @@ python grid_search.py
 
 The outputs will be saved in the `results` folder.
 
+## Output
 
+The script will save:
+- the train/test partition as `X_train.zip`, `y_train.zip`, `X_test.zip`, `y_test.zip`.
+- the `sklearn.model_selection.GridSearchCV` output in `CVcomplete_results.pkl`.
+- the `tensorflow` best model in `CVcomplete_best_estimator.h5`.
 
 ## Data
 
