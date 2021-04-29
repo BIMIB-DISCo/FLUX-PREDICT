@@ -34,7 +34,7 @@ The script will save:
 - the `sklearn.model_selection.GridSearchCV` output in `CVcomplete_results.pkl`.
 - the `tensorflow` best model in `CVcomplete_best_estimator.h5`.
 
-To load the model perform the following steps (remember to change `path_to_model`):
+To load the model and make predictions on the test set, perform the following steps (remember to change `path_to_model` and `path_to_test`):
 
 ```
 import tensorflow as tf
@@ -43,6 +43,9 @@ from model import r2_metric
 model = tf.keras.models.load_model(
   "path_to_model/CVcomplete_best_estimator.h5", 
   custom_objects={"r2_metric": r2_metric})
+
+X_test = pd.read_csv("path_to_test/X_test.zip")
+y_pred = model.predict(X_test)
 ```
 
 ## Data
