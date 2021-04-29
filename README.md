@@ -36,7 +36,7 @@ The script will save:
 
 To load the model and make predictions on the test set, perform the following steps (remember to change `path_to_model` and `path_to_test`):
 
-```
+```python
 import tensorflow as tf
 from model import r2_metric
 
@@ -52,7 +52,7 @@ y_pred = model.predict(X_test)
 
 To explore the data in the `data` folder, use the `pandas` library as follows:
 
-```
+```python
 import pandas as pd
 pd.read_csv("data/X_full.zip")
 ```
