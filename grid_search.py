@@ -31,17 +31,17 @@ y = pd.read_csv(f"data/y_full.zip")
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.1, random_state=42)
 
-# Save train and test set
-X_train.to_csv(f"{exp_path}/X_train.zip")
-y_train.to_csv(f"{exp_path}/y_train.zip")
-X_test.to_csv(f"{exp_path}/X_test.zip")
-y_test.to_csv(f"{exp_path}/y_test.zip")
-
 # Scale data
 scaler = StandardScaler()
 scaler.fit(X_train)
 X_train = scaler.transform(X_train)
 X_test = scaler.transform(X_test)
+
+# Save train and test set
+X_train.to_csv(f"{exp_path}/X_train.zip")
+y_train.to_csv(f"{exp_path}/y_train.zip")
+X_test.to_csv(f"{exp_path}/X_test.zip")
+y_test.to_csv(f"{exp_path}/y_test.zip")
 
 
 ####################
