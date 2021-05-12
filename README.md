@@ -66,3 +66,6 @@ import pandas as pd
 pd.read_csv("data/X_full.zip")
 ```
 
+## Material
+
+`MetabolicModel.xml`: SBML of yeast metabolic network model.
