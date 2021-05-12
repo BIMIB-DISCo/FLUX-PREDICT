@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version1/core" xmlns:fbc="http://www.sbml.org/sbml/level3/version1/fbc/version1" level="3" version="1" fbc:required="false">
+  <model id="dc" substanceUnits="substance" timeUnits="second" volumeUnits="volume" areaUnits="area" lengthUnits="metre" extentUnits="substance">
+    <listOfUnitDefinitions>
+      <unitDefinition id="mmol_per_gDW_per_hr">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="-3" multiplier="1"/>
+          <unit kind="gram" exponent="-1" scale="0" multiplier="1"/>
+          <unit kind="second" exponent="-1" scale="0" multiplier="0.000277777777777778"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="volume">
+        <listOfUnits>
+          <unit kind="litre" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="substance">
+        <listOfUnits>
+          <unit kind="mole" exponent="1" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="area">
+        <listOfUnits>
+          <unit kind="metre" exponent="2" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="x" name="unbalanced" spatialDimensions="3" size="1" units="volume" constant="true"/>
+      <compartment id="c" name="cytosol" spatialDimensions="3" size="1" units="volume" constant="true"/>
+      <compartment id="s" name="extracellular" spatialDimensions="3" size="1" units="volume" constant="true"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="M_Glcc" name="Glcc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_Glc6Pc" name="Glc6Pc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_F16Pc" name="F16Pc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_TrPc" name="TrPc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_PEPc" name="PEPc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_Pyrc" name="Pyrc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_ACDc" name="ACDc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_ACc" name="ACc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_Ethc" name="Ethc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_AcCoAcc" name="AcCoAcc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_AcCoAmc" name="AcCoAmc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_Citc" name="Citc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_OAAc" name="OAAc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_AKGc" name="AKGc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_IsoCitc" name="IsoCitc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_Fumc" name="Fumc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_Malc" name="Malc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_Succc" name="Succc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_SuCoAc" name="SuCoAc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_Glyoxc" name="Glyoxc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_O2c" name="O2c" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_H2Oc" name="H2Oc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_Rib5pc" name="Rib5pc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_NAc" name="NAc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_NADc" name="NADc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_NADHc" name="NADHc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_NADPc" name="NADPc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_NADPHc" name="NADPHc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_ADPc" name="ADPc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_ATPc" name="ATPc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_FADc" name="FADc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_FADH2c" name="FADH2c" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_MalCoAc" name="MalCoAc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_Pmtc" name="Pmtc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="false" constant="false"/>
+      <species id="M_Ethc_c_boundary" name="Ethc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="M_Glcc_c_boundary" name="Glcc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="M_O2c_c_boundary" name="O2c" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="M_Pmtc_c_boundary" name="Pmtc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+      <species id="M_NAc_c_boundary" name="NAc" compartment="c" substanceUnits="substance" hasOnlySubstanceUnits="false" boundaryCondition="true" constant="false"/>
+    </listOfSpecies>
+    <listOfReactions>
+      <reaction id="R_GlcIN_Glc6P" name="GlcIN_Glc6P" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_ATPc_c_R_GlcIN_Glc6P" species="M_ATPc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_Glcc_c_R_GlcIN_Glc6P" species="M_Glcc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Glc6Pc_c_R_GlcIN_Glc6P" species="M_Glc6Pc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_ADPc_c_R_GlcIN_Glc6P" species="M_ADPc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Glc6P_GlcIN" name="Glc6P_GlcIN" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_Glc6Pc_c_R_Glc6P_GlcIN" species="M_Glc6Pc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_H2Oc_c_R_Glc6P_GlcIN" species="M_H2Oc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Glcc_c_R_Glc6P_GlcIN" species="M_Glcc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Glc6P_F16P" name="Glc6P_F16P" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_Glc6Pc_c_R_Glc6P_F16P" species="M_Glc6Pc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_ATPc_c_R_Glc6P_F16P" species="M_ATPc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_ADPc_c_R_Glc6P_F16P" species="M_ADPc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_F16Pc_c_R_Glc6P_F16P" species="M_F16Pc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_F16P_Glc6P" name="F16P_Glc6P" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_F16Pc_c_R_F16P_Glc6P" species="M_F16Pc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_H2Oc_c_R_F16P_Glc6P" species="M_H2Oc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Glc6Pc_c_R_F16P_Glc6P" species="M_Glc6Pc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_F16P_TrP" name="F16P_TrP" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_F16Pc_c_R_F16P_TrP" species="M_F16Pc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_TrPc_c_R_F16P_TrP" species="M_TrPc" stoichiometry="2" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_TrP_PEP" name="TrP_PEP" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_NADc_c_R_TrP_PEP" species="M_NADc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_TrPc_c_R_TrP_PEP" species="M_TrPc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_ADPc_c_R_TrP_PEP" species="M_ADPc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_NADHc_c_R_TrP_PEP" species="M_NADHc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_PEPc_c_R_TrP_PEP" species="M_PEPc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_ATPc_c_R_TrP_PEP" species="M_ATPc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_PEP_Pyr" name="PEP_Pyr" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_PEPc_c_R_PEP_Pyr" species="M_PEPc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_ADPc_c_R_PEP_Pyr" species="M_ADPc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Pyrc_c_R_PEP_Pyr" species="M_Pyrc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_ATPc_c_R_PEP_Pyr" species="M_ATPc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Pyr_ACD" name="Pyr_ACD" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_Pyrc_c_R_Pyr_ACD" species="M_Pyrc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_ACDc_c_R_Pyr_ACD" species="M_ACDc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_ACD_Eth" name="ACD_Eth" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_ACDc_c_R_ACD_Eth" species="M_ACDc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADHc_c_R_ACD_Eth" species="M_NADHc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_NADc_c_R_ACD_Eth" species="M_NADc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_Ethc_c_R_ACD_Eth" species="M_Ethc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Glc6P_Rib5p" name="Glc6P_Rib5p" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_Glc6Pc_c_R_Glc6P_Rib5p" species="M_Glc6Pc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADPc_c_R_Glc6P_Rib5p" species="M_NADPc" stoichiometry="2" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Rib5pc_c_R_Glc6P_Rib5p" species="M_Rib5pc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADPHc_c_R_Glc6P_Rib5p" species="M_NADPHc" stoichiometry="2" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Rib5p_NA" name="Rib5p_NA" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_Rib5pc_c_R_Rib5p_NA" species="M_Rib5pc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_NAc_c_R_Rib5p_NA" species="M_NAc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_ACD_AC" name="ACD_AC" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_ACDc_c_R_ACD_AC" species="M_ACDc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADc_c_R_ACD_AC" species="M_NADc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_ACc_c_R_ACD_AC" species="M_ACc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADHc_c_R_ACD_AC" species="M_NADHc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_AC_AcCoAc" name="AC_AcCoAc" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_ATPc_c_R_AC_AcCoAc" species="M_ATPc" stoichiometry="2" constant="true"/>
+          <speciesReference id="M_ACc_c_R_AC_AcCoAc" species="M_ACc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_AcCoAcc_c_R_AC_AcCoAc" species="M_AcCoAcc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_ADPc_c_R_AC_AcCoAc" species="M_ADPc" stoichiometry="2" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Pyr_AcCoAm" name="Pyr_AcCoAm" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_NADc_c_R_Pyr_AcCoAm" species="M_NADc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_Pyrc_c_R_Pyr_AcCoAm" species="M_Pyrc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_AcCoAmc_c_R_Pyr_AcCoAm" species="M_AcCoAmc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADHc_c_R_Pyr_AcCoAm" species="M_NADHc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Pyr_OAA" name="Pyr_OAA" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_ATPc_c_R_Pyr_OAA" species="M_ATPc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_Pyrc_c_R_Pyr_OAA" species="M_Pyrc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_OAAc_c_R_Pyr_OAA" species="M_OAAc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_ADPc_c_R_Pyr_OAA" species="M_ADPc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_OAA_PEP" name="OAA_PEP" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_OAAc_c_R_OAA_PEP" species="M_OAAc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_ATPc_c_R_OAA_PEP" species="M_ATPc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_ADPc_c_R_OAA_PEP" species="M_ADPc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_PEPc_c_R_OAA_PEP" species="M_PEPc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_AcCoAm_Cit" name="AcCoAm_Cit" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_AcCoAmc_c_R_AcCoAm_Cit" species="M_AcCoAmc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_OAAc_c_R_AcCoAm_Cit" species="M_OAAc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Citc_c_R_AcCoAm_Cit" species="M_Citc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Cit_AcCoAc" name="Cit_AcCoAc" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_ATPc_c_R_Cit_AcCoAc" species="M_ATPc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_Citc_c_R_Cit_AcCoAc" species="M_Citc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_AcCoAcc_c_R_Cit_AcCoAc" species="M_AcCoAcc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_ADPc_c_R_Cit_AcCoAc" species="M_ADPc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_OAAc_c_R_Cit_AcCoAc" species="M_OAAc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Cit_IsoCit" name="Cit_IsoCit" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_Citc_c_R_Cit_IsoCit" species="M_Citc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_IsoCitc_c_R_Cit_IsoCit" species="M_IsoCitc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_IsoCit_AKGin" name="IsoCit_AKGin" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_IsoCitc_c_R_IsoCit_AKGin" species="M_IsoCitc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADc_c_R_IsoCit_AKGin" species="M_NADc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_AKGc_c_R_IsoCit_AKGin" species="M_AKGc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADHc_c_R_IsoCit_AKGin" species="M_NADHc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_AKG_SuCoA" name="AKG_SuCoA" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_NADc_c_R_AKG_SuCoA" species="M_NADc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_AKGc_c_R_AKG_SuCoA" species="M_AKGc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_SuCoAc_c_R_AKG_SuCoA" species="M_SuCoAc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADHc_c_R_AKG_SuCoA" species="M_NADHc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_SuCoA_Succ" name="SuCoA_Succ" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_SuCoAc_c_R_SuCoA_Succ" species="M_SuCoAc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_ADPc_c_R_SuCoA_Succ" species="M_ADPc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Succc_c_R_SuCoA_Succ" species="M_Succc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_ATPc_c_R_SuCoA_Succ" species="M_ATPc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Fum_Succ" name="Fum_Succ" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_FADc_c_R_Fum_Succ" species="M_FADc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_Succc_c_R_Fum_Succ" species="M_Succc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_FADH2c_c_R_Fum_Succ" species="M_FADH2c" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_Fumc_c_R_Fum_Succ" species="M_Fumc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Fum_Mal" name="Fum_Mal" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_Fumc_c_R_Fum_Mal" species="M_Fumc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Malc_c_R_Fum_Mal" species="M_Malc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Mal_OAA" name="Mal_OAA" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_Malc_c_R_Mal_OAA" species="M_Malc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADc_c_R_Mal_OAA" species="M_NADc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_OAAc_c_R_Mal_OAA" species="M_OAAc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADHc_c_R_Mal_OAA" species="M_NADHc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Mal_Pyr" name="Mal_Pyr" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_Malc_c_R_Mal_Pyr" species="M_Malc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADc_c_R_Mal_Pyr" species="M_NADc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Pyrc_c_R_Mal_Pyr" species="M_Pyrc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADHc_c_R_Mal_Pyr" species="M_NADHc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Glyox_Mal" name="Glyox_Mal" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_AcCoAmc_c_R_Glyox_Mal" species="M_AcCoAmc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_Glyoxc_c_R_Glyox_Mal" species="M_Glyoxc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Malc_c_R_Glyox_Mal" species="M_Malc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_IsoCit_Glyox" name="IsoCit_Glyox" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_IsoCitc_c_R_IsoCit_Glyox" species="M_IsoCitc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Succc_c_R_IsoCit_Glyox" species="M_Succc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_Glyoxc_c_R_IsoCit_Glyox" species="M_Glyoxc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_AcCoa_MalCoA" name="AcCoa_MalCoA" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_ATPc_c_R_AcCoa_MalCoA" species="M_ATPc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_AcCoAcc_c_R_AcCoa_MalCoA" species="M_AcCoAcc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_ADPc_c_R_AcCoa_MalCoA" species="M_ADPc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_MalCoAc_c_R_AcCoa_MalCoA" species="M_MalCoAc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_AcCoAc_FFA8" name="AcCoAc_FFA8" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_AcCoAcc_c_R_AcCoAc_FFA8" species="M_AcCoAcc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADPHc_c_R_AcCoAc_FFA8" species="M_NADPHc" stoichiometry="14" constant="true"/>
+          <speciesReference id="M_MalCoAc_c_R_AcCoAc_FFA8" species="M_MalCoAc" stoichiometry="7" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Pmtc_c_R_AcCoAc_FFA8" species="M_Pmtc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADPc_c_R_AcCoAc_FFA8" species="M_NADPc" stoichiometry="14" constant="true"/>
+          <speciesReference id="M_H2Oc_c_R_AcCoAc_FFA8" species="M_H2Oc" stoichiometry="7" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_NADH_H2O" name="NADH_H2O" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_NADHc_c_R_NADH_H2O" species="M_NADHc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_O2c_c_R_NADH_H2O" species="M_O2c" stoichiometry="0.5" constant="true"/>
+          <speciesReference id="M_ADPc_c_R_NADH_H2O" species="M_ADPc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_NADc_c_R_NADH_H2O" species="M_NADc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_ATPc_c_R_NADH_H2O" species="M_ATPc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_H2Oc_c_R_NADH_H2O" species="M_H2Oc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_FADH2_H2O" name="FADH2_H2O" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_FADH2c_c_R_FADH2_H2O" species="M_FADH2c" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_O2c_c_R_FADH2_H2O" species="M_O2c" stoichiometry="0.5" constant="true"/>
+          <speciesReference id="M_ADPc_c_R_FADH2_H2O" species="M_ADPc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_ATPc_c_R_FADH2_H2O" species="M_ATPc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_FADc_c_R_FADH2_H2O" species="M_FADc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_H2Oc_c_R_FADH2_H2O" species="M_H2Oc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_ATP_ADP" name="ATP_ADP" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_ATPc_c_R_ATP_ADP" species="M_ATPc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_ADPc_c_R_ATP_ADP" species="M_ADPc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Eth_EthOUT" name="Eth_EthOUT" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_Ethc_c_R_Eth_EthOUT" species="M_Ethc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Ethc_c_boundary_R_Eth_EthOUT" species="M_Ethc_c_boundary" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_GlcOUT_GlcIN" name="GlcOUT_GlcIN" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_Glcc_c_boundary_R_GlcOUT_GlcIN" species="M_Glcc_c_boundary" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Glcc_c_R_GlcOUT_GlcIN" species="M_Glcc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_O2OUT_O2" name="O2OUT_O2" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_O2c_c_boundary_R_O2OUT_O2" species="M_O2c_c_boundary" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_O2c_c_R_O2OUT_O2" species="M_O2c" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_FFAdemand" name="FFAdemand" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_Pmtc_c_R_FFAdemand" species="M_Pmtc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Pmtc_c_boundary_R_FFAdemand" species="M_Pmtc_c_boundary" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Nademand" name="Nademand" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_NAc_c_R_Nademand" species="M_NAc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_NAc_c_boundary_R_Nademand" species="M_NAc_c_boundary" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_F16P_TrP_reverse" name="F16P_TrP_reverse" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_TrPc_c_R_F16P_TrP_reverse" species="M_TrPc" stoichiometry="2" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_F16Pc_c_R_F16P_TrP_reverse" species="M_F16Pc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_TrP_PEP_reverse" name="TrP_PEP_reverse" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_NADHc_c_R_TrP_PEP_reverse" species="M_NADHc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_PEPc_c_R_TrP_PEP_reverse" species="M_PEPc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_ATPc_c_R_TrP_PEP_reverse" species="M_ATPc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_NADc_c_R_TrP_PEP_reverse" species="M_NADc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_TrPc_c_R_TrP_PEP_reverse" species="M_TrPc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_ADPc_c_R_TrP_PEP_reverse" species="M_ADPc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Pyr_ACD_reverse" name="Pyr_ACD_reverse" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_ACDc_c_R_Pyr_ACD_reverse" species="M_ACDc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Pyrc_c_R_Pyr_ACD_reverse" species="M_Pyrc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_ACD_Eth_reverse" name="ACD_Eth_reverse" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_NADc_c_R_ACD_Eth_reverse" species="M_NADc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_Ethc_c_R_ACD_Eth_reverse" species="M_Ethc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_ACDc_c_R_ACD_Eth_reverse" species="M_ACDc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADHc_c_R_ACD_Eth_reverse" species="M_NADHc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Cit_IsoCit_reverse" name="Cit_IsoCit_reverse" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_IsoCitc_c_R_Cit_IsoCit_reverse" species="M_IsoCitc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Citc_c_R_Cit_IsoCit_reverse" species="M_Citc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_IsoCit_AKGin_reverse" name="IsoCit_AKGin_reverse" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_AKGc_c_R_IsoCit_AKGin_reverse" species="M_AKGc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADHc_c_R_IsoCit_AKGin_reverse" species="M_NADHc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_IsoCitc_c_R_IsoCit_AKGin_reverse" species="M_IsoCitc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADc_c_R_IsoCit_AKGin_reverse" species="M_NADc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_SuCoA_Succ_reverse" name="SuCoA_Succ_reverse" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_Succc_c_R_SuCoA_Succ_reverse" species="M_Succc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_ATPc_c_R_SuCoA_Succ_reverse" species="M_ATPc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_SuCoAc_c_R_SuCoA_Succ_reverse" species="M_SuCoAc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_ADPc_c_R_SuCoA_Succ_reverse" species="M_ADPc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Fum_Succ_reverse" name="Fum_Succ_reverse" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_FADH2c_c_R_Fum_Succ_reverse" species="M_FADH2c" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_Fumc_c_R_Fum_Succ_reverse" species="M_Fumc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Succc_c_R_Fum_Succ_reverse" species="M_Succc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_FADc_c_R_Fum_Succ_reverse" species="M_FADc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Fum_Mal_reverse" name="Fum_Mal_reverse" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_Malc_c_R_Fum_Mal_reverse" species="M_Malc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Fumc_c_R_Fum_Mal_reverse" species="M_Fumc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+      <reaction id="R_Mal_OAA_reverse" name="Mal_OAA_reverse" reversible="false" fast="false">
+        <listOfReactants>
+          <speciesReference id="M_OAAc_c_R_Mal_OAA_reverse" species="M_OAAc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADHc_c_R_Mal_OAA_reverse" species="M_NADHc" stoichiometry="1" constant="true"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference id="M_Malc_c_R_Mal_OAA_reverse" species="M_Malc" stoichiometry="1" constant="true"/>
+          <speciesReference id="M_NADc_c_R_Mal_OAA_reverse" species="M_NADc" stoichiometry="1" constant="true"/>
+        </listOfProducts>
+      </reaction>
+    </listOfReactions>
+    <fbc:listOfFluxBounds>
+      <fbc:fluxBound fbc:reaction="R_GlcIN_Glc6P" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_GlcIN_Glc6P" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Glc6P_GlcIN" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Glc6P_GlcIN" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Glc6P_F16P" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Glc6P_F16P" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_F16P_Glc6P" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_F16P_Glc6P" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_F16P_TrP" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_F16P_TrP" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_TrP_PEP" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_TrP_PEP" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_PEP_Pyr" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_PEP_Pyr" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Pyr_ACD" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Pyr_ACD" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_ACD_Eth" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_ACD_Eth" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Glc6P_Rib5p" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Glc6P_Rib5p" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Rib5p_NA" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Rib5p_NA" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_ACD_AC" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_ACD_AC" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_AC_AcCoAc" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_AC_AcCoAc" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Pyr_AcCoAm" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Pyr_AcCoAm" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Pyr_OAA" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Pyr_OAA" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_OAA_PEP" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_OAA_PEP" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_AcCoAm_Cit" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_AcCoAm_Cit" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Cit_AcCoAc" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Cit_AcCoAc" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Cit_IsoCit" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Cit_IsoCit" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_IsoCit_AKGin" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_IsoCit_AKGin" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_AKG_SuCoA" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_AKG_SuCoA" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_SuCoA_Succ" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_SuCoA_Succ" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Fum_Succ" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Fum_Succ" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Fum_Mal" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Fum_Mal" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Mal_OAA" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Mal_OAA" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Mal_Pyr" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Mal_Pyr" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Glyox_Mal" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Glyox_Mal" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_IsoCit_Glyox" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_IsoCit_Glyox" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_AcCoa_MalCoA" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_AcCoa_MalCoA" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_AcCoAc_FFA8" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_AcCoAc_FFA8" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_NADH_H2O" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_NADH_H2O" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_FADH2_H2O" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_FADH2_H2O" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_ATP_ADP" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_ATP_ADP" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Eth_EthOUT" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Eth_EthOUT" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_GlcOUT_GlcIN" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_GlcOUT_GlcIN" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_O2OUT_O2" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_O2OUT_O2" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_FFAdemand" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_FFAdemand" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Nademand" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Nademand" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_F16P_TrP_reverse" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_F16P_TrP_reverse" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_TrP_PEP_reverse" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_TrP_PEP_reverse" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Pyr_ACD_reverse" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Pyr_ACD_reverse" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_ACD_Eth_reverse" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_ACD_Eth_reverse" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Cit_IsoCit_reverse" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Cit_IsoCit_reverse" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_IsoCit_AKGin_reverse" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_IsoCit_AKGin_reverse" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_SuCoA_Succ_reverse" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_SuCoA_Succ_reverse" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Fum_Succ_reverse" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Fum_Succ_reverse" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Fum_Mal_reverse" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Fum_Mal_reverse" fbc:operation="lessEqual" fbc:value="1000"/>
+      <fbc:fluxBound fbc:reaction="R_Mal_OAA_reverse" fbc:operation="greaterEqual" fbc:value="0"/>
+      <fbc:fluxBound fbc:reaction="R_Mal_OAA_reverse" fbc:operation="lessEqual" fbc:value="1000"/>
+    </fbc:listOfFluxBounds>
+  </model>
+</sbml>
